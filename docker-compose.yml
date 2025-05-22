@@ -5,9 +5,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      target: production  # Use the 'production' stage from Dockerfile.prod for production
     ports:
       - "3005:3000"
     environment:
       - NODE_ENV=production
     restart: unless-stopped
+    command: npm run dev
